@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Theo Autosn</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- HEADER / NAV -->
+  <header>
+  <div class="container-header">
+    <h1><img src="images/logo.png" alt="">
+    </h1>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#inventory">Inventory</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </div>
+</header>
+
+  <!-- HERO -->
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <h2>Your Dream Car Awaits</h2>
+      <p>Browse our top-quality cars and contact us instantly via WhatsApp.</p>
+      <a href="#inventory" class="btn-primary">View Inventory</a>
+    </div>
+  </section>
+  <!-- CAR BRANDS SCROLL -->
+<div class="brand-marquee">
+
+  <div class="brand-track">
+
+    <img src="images/toyota.png" alt="Toyota">
+    <img src="images/mercedes.png" alt="Mercedes">
+    <img src="images/lexus.png" alt="Lexus">
+    <img src="images/honda.png" alt="Honda">
+    <img src="images/ford.png" alt="Ford">
+    <img src="images/bmw.png" alt="Bmw">
+
+    <!-- duplicate for seamless loop -->
+    <img src="images/toyota.png" alt="Toyota">
+    <img src="images/mercedes.png" alt="Mercedes">
+    <img src="images/lexus.png" alt="Lexus">
+    <img src="images/honda.png" alt="Honda">
+    <img src="images/ford.png" alt="Ford">
+
+  </div>
+
+</div>
+
+ <section id="how-it-works" class="reveal">
+  <div class="how-wrapper">
+    <h2>How It Works</h2>
+    <p class="subtitle">Simple. Fast. Transparent.</p>
+
+    <div class="steps reveal">
+
+      <div class="step">
+        <div class="step-icon">
+          <i class="fas fa-car"></i>
+        </div>
+
+        <div class="step-content">
+          <span class="step-number">01</span>
+          <h3>Browse Cars</h3>
+          <p>Explore our curated selection of verified vehicles.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-icon">
+          <i class="fas fa-sliders-h"></i>
+        </div>
+
+        <div class="step-content">
+          <span class="step-number">02</span>
+          <h3>Choose Your Car</h3>
+          <p>Filter by price and find the perfect match for you.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-icon">
+          <i class="fas fa-comments"></i>
+        </div>
+
+        <div class="step-content">
+          <span class="step-number">03</span>
+          <h3>Contact Instantly</h3>
+          <p>Reach out directly via WhatsApp and secure your deal.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- INVENTORY / CAR LIST -->
+ <section id="inventory" class="reveal">
+
+  <h2 class="filter-title">Available Vehicles</h2>
+
+  <!-- CONTROL PANEL (SEARCH + FILTER TOGETHER) -->
+ <div class="control-bar">
+
+  <!-- SEARCH -->
+  <div class="control-item search">
+    <i class="fa-solid fa-magnifying-glass"></i>
+
+    <input 
+      type="text" 
+      id="searchInput" 
+      placeholder="Search brand or mode"
+      oninput="searchCars()"
+    />
+
+    <button onclick="searchCars()">Search</button>
+  </div>
+
+  <!-- PRICE FILTER -->
+  <div class="control-item filter">
+    <input type="number" id="min" placeholder="Min Price">
+    <input type="number" id="max" placeholder="Max Price">
+
+    <button onclick="filterCars()">Filter</button>
+  </div>
+
+</div>
+
+  <div id="results"></div>
+
+  <div class="container" id="cars"></div>
+
+</section>
+
+  <section id="booking" class="reveal">
+  <h2>Book A Car</h2>
+
+  <form id="booking-form">
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="tel" id="phone" placeholder="Phone Number" required>
+
+    <textarea id="message" placeholder="Extra Message (optional)"></textarea>
+
+    <button type="submit">Send via WhatsApp</button>
+  </form>
+</section>
+
+  <section id="testimonials" class="reveal">
+  <h2>What Our Customers Say</h2>
+  <div class="testimonial-container">
+    <div class="testimonial reveal">
+      <img src="images/man.jfif.png" alt="John Doe" class="testimonial-img">
+      <h4>John Doe</h4>
+      <p class="review">Amazing service! Bought my dream car here and the process was smooth.</p>
+      <p class="stars">⭐⭐⭐⭐⭐</p>
+    </div>
+
+    <div class="testimonial">
+      <img src="images/man.png" alt="Jane Smith" class="testimonial-img">
+      <h4>Jane Smith</h4>
+      <p class="review">Highly recommended! Friendly staff and great prices.</p>
+      <p class="stars">⭐⭐⭐⭐⭐</p>
+    </div>
+
+    <div class="testimonial">
+      <img src="images/person3.jpg" alt="Mike Johnson" class="testimonial-img">
+      <h4>Mike Johnson</h4>
+      <p class="review">The team helped me find exactly what I wanted. Excellent experience!</p>
+      <p class="stars">⭐⭐⭐⭐⭐</p>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="faq-section reveal" >
+
+  <div class="faq-header">
+    <h2>Frequently Asked Questions</h2>
+    <p>Everything you need to know before buying your car</p>
+  </div>
+
+  <div class="faq-container reveal">
+
+    <div class="faq-item">
+      <button class="faq-question">
+        Are your cars fully inspected before sale?
+        <span>+</span>
+      </button>
+      <div class="faq-answer">
+        Yes. Every vehicle goes through a full mechanical and safety inspection before being listed for sale.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        Do you offer payment plans or financing?
+        <span>+</span>
+      </button>
+      <div class="faq-answer">
+        Yes, flexible payment options are available depending on the vehicle and buyer eligibility.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        Can I inspect or test drive a car before buying?
+        <span>+</span>
+      </button>
+      <div class="faq-answer">
+        Absolutely. We encourage in-person inspection and test drives before any purchase decision.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        Do you handle paperwork and registration?
+        <span>+</span>
+      </button>
+      <div class="faq-answer">
+        Yes, we assist with full documentation, ownership transfer, and registration processes.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        How do I reserve a car?
+        <span>+</span>
+      </button>
+      <div class="faq-answer">
+        You can reserve a vehicle by contacting us directly via WhatsApp or visiting the showroom.
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<section id="about" class="about reveal">
+  <div class="about-container">
+
+    <!-- LEFT: MEDIA -->
+    <div class="about-media">
+      <!-- Use ONE: video OR image -->
+
+      <!-- VIDEO OPTION -->
+      <video controls poster="images/dealership-cover.jpg">
+        <source src="images/dealership.mp4" type="video/mp4">
+      </video>
+
+      <!-- IMAGE OPTION (if no video) -->
+      <!-- <img src="images/dealership.jpg" alt="Dealership"> -->
+
+    </div>
+
+    <!-- RIGHT: TEXT -->
+    <div class="about-content">
+      <h2>About Our Dealership</h2>
+      <p>
+        We specialize in providing high-quality, verified vehicles at competitive prices. 
+        Every car in our inventory is carefully inspected to ensure performance, reliability, and value.
+      </p>
+
+      <p>
+        Our goal is simple — connect you with your ideal car quickly and transparently, 
+        with direct communication via WhatsApp for a smooth buying experience.
+      </p>
+
+      <a href="#inventory" class="btn-primary2">Browse Cars</a>
+    </div>
+
+  </div>
+</section>
+
+  <!-- ABOUT / FEATURES -->
+  <section>
+  <h2>Why Choose Us</h2>
+
+  <div class="features reveal">
+
+    <div class="feature">
+      <img src="images/top quality car.png" alt="Top Quality Cars">
+      <h3>Top Quality Cars</h3>
+      <p>We provide well-maintained, certified vehicles ready to drive.</p>
+    </div>
+
+    <div class="feature">
+      <img src="images/easy to contact.png" alt="Easy Contact via WhatsApp">
+      <h3>Easy Contact</h3>
+      <p>Instantly contact us through WhatsApp to book or inquire.</p>
+    </div>
+
+    <div class="feature">
+      <img src="images/trusted service.png" alt="Trusted Car Dealer">
+      <h3>Trusted Dealer</h3>
+      <p>Our reputation speaks for itself—hundreds of happy customers.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section id="location" class="location-section reveal">
+
+  <div class="location-header">
+    <h2>Our Location</h2>
+    <p>Visit our showroom or connect with us online</p>
+  </div>
+
+  <div class="location-grid">
+
+    <!-- TEXT INFO -->
+    <div class="location-info">
+      <h3>Theo Autos Showroom</h3>
+      <p>We are open for inspections, test drives, and direct deals.</p>
+
+      <div class="location-details">
+        <p><strong>Address:</strong> Your full business address here</p>
+        <p><strong>Hours:</strong> Mon - Sat (9am - 6pm)</p>
+        <p><strong>Phone:</strong> +1 704 261 5400</p>
+      </div>
+
+      <a href="https://wa.me/17042615400" target="_blank" class="location-btn">
+        Message on WhatsApp
+      </a>
+    </div>
+
+    <!-- MAP -->
+    <div class="location-map">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d..."
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+  </div>
+
+</section>
+
+  <!-- FOOTER -->
+<footer id="contact">
+  <div class="footer-container">
+
+    <!-- LEFT -->
+    <div class="footer-brand">
+      <img src="images/logo.png" alt="Theo Autos Logo">
+      <p class="tagline">Premium Cars. Trusted Deals.</p>
+
+      <div class="socials">
+        <a href="https://www.tiktok.com/@theo_autos_" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+    <!-- CENTER -->
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <a href="#">Home</a>
+      <a href="#cars">Inventory</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="footer-contact">
+      <h4>Contact</h4>
+      <p>Have questions?</p>
+      <a href="https://wa.me/17042615400" target="_blank">Chat on WhatsApp</a>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Theo Autos. All rights reserved.</p>
+  </div>
+</footer>
+<a href="https://wa.me/17042615400" target="_blank" class="floating-whatsapp">
+  <span class="wa-bg"></span>
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+</body>
+<div id="car-modal">
+  <div class="modal-content">
+
+    <span class="close-btn">&times;</span>
+      <div class="modal-body">
+        
+    
+    <div class="image-wrapper">
+  <button class="arrow left">&#10094;</button>
+  <img id="main-image" />
+  <button class="arrow right">&#10095;</button>
+</div>
+
+    <div class="modal-info">
+      <h2 id="modal-title"></h2>
+
+      <p id="modal-price" class="price"></p>
+
+      <div class="details">
+        <p id="modal-year"></p>
+        <p id="modal-mileage">Mileage: 45,000 km</p>
+        <p id="modal-fuel">Fuel: Petrol</p>
+        <p id="modal-transmission">Transmission: Automatic</p>
+      </div>
+
+      <button id="whatsapp-btn">Contact Dealer</button>
+    </div>
+
+    
+   </div>
+  </div>
+</div>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-storage-compat.js"></script>
+
+  <script src="script.js"></script>
+</html>

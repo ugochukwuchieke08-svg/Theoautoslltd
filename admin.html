@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Dashboard</title>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  <style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #0f172a;
+    margin: 0;
+    padding: 0;
+    color: #e5e7eb;
+  }
+
+  h2 {
+    text-align: center;
+    margin-top: 25px;
+    color: #ffffff;
+    font-weight: 600;
+  }
+
+  hr {
+    border: none;
+    height: 1px;
+    background: #1f2937;
+    margin: 30px 0;
+  }
+
+  #login-box, #admin-panel {
+    width: 90%;
+    max-width: 420px;
+    margin: 20px auto;
+    background: #111827;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  }
+
+  input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: 1px solid #374151;
+    background: #0b1220;
+    color: white;
+    outline: none;
+    transition: 0.2s;
+  }
+
+  input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59,130,246,0.2);
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #3b82f6;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+
+  button:hover {
+    background: #2563eb;
+  }
+
+  button:disabled {
+    background: #64748b;
+    cursor: not-allowed;
+  }
+
+  #uploadStatus {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #93c5fd;
+  }
+
+  #login-box {
+    text-align: center;
+  }
+
+  #admin-panel input[type="file"] {
+    background: transparent;
+    border: none;
+  }
+
+  /* Make layout feel premium */
+  #admin-panel {
+    animation: fadeIn 0.4s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  #login-box button {
+  width: 60%;
+  display: block;
+  margin: 15px auto 0 auto;
+}
+#login-box {
+  text-align: center;
+}
+
+#login-box input {
+  text-align: center;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Admin Login</h2>
+
+<div id="login-box">
+  <input id="email" placeholder="Email">
+  <input id="password" type="password" placeholder="Password">
+  <button onclick="login()">Login</button>
+</div>
+
+<hr>
+
+<h2>Upload Car</h2>
+
+<div id="admin-panel" style="display:none;">
+  <input id="make" placeholder="Make">
+  <input id="model" placeholder="Model">
+  <input id="year" type="number" placeholder="Year">
+  <input id="price" type="number" placeholder="Price">
+  <input id="mileage" type="number" placeholder="Mileage">
+  <input id="fuel" placeholder="Fuel">
+  <input id="transmission" placeholder="Transmission">
+
+  <input type="file" id="images" multiple>
+
+ <button id="uploadBtn" onclick="uploadCar()">Upload Car</button>
+<p id="uploadStatus"></p>
+</div>
+
+<script src="admin.js"></script>
+
+</body>
+</html>
