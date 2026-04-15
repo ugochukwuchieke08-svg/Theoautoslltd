@@ -72,6 +72,7 @@ function displayCars(data) {
       <img src="${image}" alt="${car.make} ${car.model}">
       <h3>${car.make} ${car.model}</h3>
       <p>Year: ${car.year}</p>
+      <p>downpayment: ${car.downpayment}</p>
       <p>$${Number(car.price || 0).toLocaleString()}</p>
     `;
 
