@@ -93,13 +93,14 @@ status.innerText = "Uploading...";
   const model = document.getElementById("model").value.trim();
   const year = document.getElementById("year").value;
   const price = document.getElementById("price").value;
+  const DownPayment = document.getElementById("down payment").value;
   const mileage = document.getElementById("mileage").value;
   const fuel = document.getElementById("fuel").value;
   const transmission = document.getElementById("transmission").value;
   const files = document.getElementById("images").files;
 
   // VALIDATION
-  if (!make || !model || !year || !price) {
+  if (!make || !model || !year || !price || !DownPayment) {
     alert("Fill all required fields");
     return;
   }
@@ -135,6 +136,7 @@ status.innerText = "Uploading...";
       model,
       year: Number(year),
       price: Number(price),
+      DownPayment: Number(DownPayment),
       mileage: mileage || "",
       fuel: fuel || "",
       transmission: transmission || "",
