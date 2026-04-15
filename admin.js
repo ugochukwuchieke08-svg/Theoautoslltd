@@ -93,7 +93,7 @@ status.innerText = "Uploading...";
   const model = document.getElementById("model").value.trim();
   const year = document.getElementById("year").value;
   const price = document.getElementById("price").value;
-  const DownPayment = document.getElementById("down payment").value;
+  const downpayment = document.getElementById("down payment").value;
   const mileage = document.getElementById("mileage").value;
   const fuel = document.getElementById("fuel").value;
   const transmission = document.getElementById("transmission").value;
@@ -136,7 +136,7 @@ status.innerText = "Uploading...";
       model,
       year: Number(year),
       price: Number(price),
-      DownPayment: Number(DownPayment),
+      downpayment: Number(downpayment),
       mileage: mileage || "",
       fuel: fuel || "",
       transmission: transmission || "",
