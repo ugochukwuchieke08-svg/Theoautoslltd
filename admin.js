@@ -133,3 +133,4 @@ async function uploadCar() {
     btn.disabled = false;
   }
 }
+window.login = login;
