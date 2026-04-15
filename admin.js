@@ -42,6 +42,39 @@ function login() {
     });
 }
 
+// CLOUDINARY UPLOAD
+// ===============================
+async function uploadImage(file) {
+  try {
+    const formData = new FormData();
+
+    formData.append("file", file);
+    formData.append("upload_preset", "theo-upload");
+
+    const response = await fetch(
+      "https://api.cloudinary.com/v1_1/du6e7pzwg/image/upload",
+      {
+        method: "POST",
+        body: formData
+      }
+    );
+
+    const data = await response.json();
+
+    console.log("Cloudinary:", data);
+
+    if (!data.secure_url) {
+      throw new Error("Image upload failed");
+    }
+
+    return data.secure_url;
+
+  } catch (error) {
+    console.error("Upload error:", error);
+    return null;
+  }
+}
+
 
 async function uploadCar() {
   const btn = document.getElementById("uploadBtn");
