@@ -97,6 +97,7 @@ function openModal(car) {
   document.getElementById("modal-title").innerText = `${car.make} ${car.model}`;
   document.getElementById("modal-year").innerText = `Year: ${car.year}`;
   document.getElementById("modal-price").innerText = `$${Number(car.price).toLocaleString()}`;
+  document.getElementById("modal-downpaymnet").innerText = `$${Number(car.downpayment).toLocaleString()}`;
   document.getElementById("modal-mileage").innerText = `Mileage: ${car.mileage || "N/A"}`;
   document.getElementById("modal-fuel").innerText = `Fuel: ${car.fuel || "N/A"}`;
   document.getElementById("modal-transmission").innerText = `Transmission: ${car.transmission || "N/A"}`;
