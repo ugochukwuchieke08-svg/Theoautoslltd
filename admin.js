@@ -167,3 +167,5 @@ async function uploadCar() {
   }
 }
 window.login = login;
+window.uploadCar = uploadCar;
+window.uploadImage = uploadImage;
