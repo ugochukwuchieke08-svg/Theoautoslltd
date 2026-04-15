@@ -1,3 +1,48 @@
+// ===============================
+// FIREBASE INIT
+// ===============================
+const firebaseConfig = {
+  apiKey: "AIzaSyAtllt4jfm3CFJfBY-SxQhZkyfLeP3M8P4",
+  authDomain: "theo-autos.firebaseapp.com",
+  projectId: "theo-autos",
+  storageBucket: "theo-autos.firebasestorage.app",
+  messagingSenderId: "168232129815",
+  appId: "1:168232129815:web:8cb6094b1f461564671352",
+};
+
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+}
+
+const auth = firebase.auth();
+const db = firebase.firestore();
+
+
+// ===============================
+// LOGIN
+// ===============================
+function login() {
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
+
+  if (!email || !password) {
+    alert("Enter email and password");
+    return;
+  }
+
+  auth.signInWithEmailAndPassword(email, password)
+    .then(() => {
+      document.getElementById("login-box").style.display = "none";
+      document.getElementById("admin-panel").style.display = "block";
+      console.log("Logged in");
+    })
+    .catch(err => {
+      console.error(err);
+      alert(err.message);
+    });
+}
+
+
 async function uploadCar() {
   const btn = document.getElementById("uploadBtn");
   const status = document.getElementById("uploadStatus");
