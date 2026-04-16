@@ -99,8 +99,8 @@ function openModal(car) {
   document.getElementById("modal-price").innerText = `$${Number(car.price).toLocaleString()}`;
 document.getElementById("modal-downpayment").innerText =
   car.downpayment
-    ? `$${Number(car.downpayment).toLocaleString()}`
-    : "No down payment";
+    ? `Down Payment: $${Number(car.downpayment).toLocaleString()}`
+    : "Down Payment: Not available";
   document.getElementById("modal-mileage").innerText = `Mileage: ${car.mileage || "N/A"}`;
   document.getElementById("modal-fuel").innerText = `Fuel: ${car.fuel || "N/A"}`;
   document.getElementById("modal-transmission").innerText = `Transmission: ${car.transmission || "N/A"}`;
