@@ -116,10 +116,20 @@ async function uploadCar() {
     }
 
     // ✅ PARALLEL IMAGE UPLOAD (FAST)
-    const uploadPromises = Array.from(files).map(file => uploadImage(file));
-    const results = await Promise.all(uploadPromises);
+  // ✅ ORDERED IMAGE UPLOAD (FIXED)
+let imageUrls = [];
 
-    const imageUrls = results.filter(url => url);
+for (let i = 0; i < files.length; i++) {
+  const url = await uploadImage(files[i]);
+
+  if (url) {
+    imageUrls.push(url);
+  } else {
+    console.warn("One image failed to upload");
+  }
+}
+
+   
 
     if (imageUrls.length === 0) {
       throw new Error("All image uploads failed");
