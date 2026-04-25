@@ -6,6 +6,7 @@
   <title>Theo Autosn</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -33,7 +34,7 @@
   <!-- HERO -->
   <section id="hero" class="hero">
     <div class="hero-content">
-      <h2>Your Dream Car Awaits</h2>
+      <h2>Cheap cars at Oklahoma</h2>
       <p>Browse our top-quality cars and contact us instantly via WhatsApp.</p>
       <a href="#inventory" class="btn-primary">View Inventory</a>
     </div>
@@ -60,6 +61,43 @@
   </div>
 
 </div>
+
+<section id="inventory" class="reveal">
+
+  <h2 class="filter-title">Available Vehicles</h2>
+
+  <!-- CONTROL PANEL (SEARCH + FILTER TOGETHER) -->
+ <div class="control-bar">
+
+  <!-- SEARCH -->
+  <div class="control-item search">
+    <i class="fa-solid fa-magnifying-glass"></i>
+
+    <input 
+      type="text" 
+      id="searchInput" 
+      placeholder="Search brand or mode"
+      oninput="searchCars()"
+    />
+
+    <button onclick="searchCars()">Search</button>
+  </div>
+
+  <!-- PRICE FILTER -->
+  <div class="control-item filter">
+    <input type="number" id="min" placeholder="Min Price">
+    <input type="number" id="max" placeholder="Max Price">
+
+    <button onclick="filterCars()">Filter</button>
+  </div>
+
+</div>
+
+  <div id="results"></div>
+
+  <div class="container" id="cars"></div>
+
+</section>
 
  <section id="how-it-works" class="reveal">
   <div class="how-wrapper">
@@ -109,42 +147,7 @@
 </section>
 
   <!-- INVENTORY / CAR LIST -->
- <section id="inventory" class="reveal">
-
-  <h2 class="filter-title">Available Vehicles</h2>
-
-  <!-- CONTROL PANEL (SEARCH + FILTER TOGETHER) -->
- <div class="control-bar">
-
-  <!-- SEARCH -->
-  <div class="control-item search">
-    <i class="fa-solid fa-magnifying-glass"></i>
-
-    <input 
-      type="text" 
-      id="searchInput" 
-      placeholder="Search brand or mode"
-      oninput="searchCars()"
-    />
-
-    <button onclick="searchCars()">Search</button>
-  </div>
-
-  <!-- PRICE FILTER -->
-  <div class="control-item filter">
-    <input type="number" id="min" placeholder="Min Price">
-    <input type="number" id="max" placeholder="Max Price">
-
-    <button onclick="filterCars()">Filter</button>
-  </div>
-
-</div>
-
-  <div id="results"></div>
-
-  <div class="container" id="cars"></div>
-
-</section>
+ 
 
   <section id="booking" class="reveal">
   <h2>Book A Car</h2>
@@ -171,13 +174,13 @@
 
     <div class="testimonial">
       <img src="images/man.png" alt="Jane Smith" class="testimonial-img">
-      <h4>Jane Smith</h4>
+      <h4>Harry Brown</h4>
       <p class="review">Highly recommended! Friendly staff and great prices.</p>
       <p class="stars">⭐⭐⭐⭐⭐</p>
     </div>
 
     <div class="testimonial">
-      <img src="images/person3.jpg" alt="Mike Johnson" class="testimonial-img">
+      <img src="images/last man.png" alt="Mike Johnson" class="testimonial-img">
       <h4>Mike Johnson</h4>
       <p class="review">The team helped me find exactly what I wanted. Excellent experience!</p>
       <p class="stars">⭐⭐⭐⭐⭐</p>
