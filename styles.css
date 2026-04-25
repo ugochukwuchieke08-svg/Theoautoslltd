@@ -7,7 +7,7 @@
 
 /* BODY */
 body {
-  font-family: Arial, sans-serif;
+   font-family: 'Poppins', sans-serif;
   line-height: 1.6;
   background: #f4f4f4;
   color: #333;
@@ -26,7 +26,7 @@ header {
   left: 0;
   width: 100%;
   z-index: 9999;
-  height: 100px;
+  height: 80px;
   padding: 15px 0;
 
   background: rgba(20, 20, 20, 0.75);
@@ -125,6 +125,7 @@ header nav ul li a:hover::after {
 
     transition: right 0.3s ease;
   }
+  
 
 
   header nav ul.active {
@@ -154,22 +155,41 @@ header nav ul li a:hover::after {
   margin: 0; /* remove any default margin */
   padding: 0; /* remove padding */
   box-sizing: border-box;
+  position: relative;
+}
+#hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+#hero * {
+  position: relative;
+  z-index: 2;
 }
 
 #hero h2 {
-  font-size: 48px;
-  margin-bottom: 20px;
-  color: #fff;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -1px;
+  max-width: 600px;
+  color: #00b792;
+  text-align: left;
+  margin-left: 70px;
   
+
 }
 
 #hero p {
-  font-size: 20px;
-  margin-bottom: 30px;
-    color: #a19e9e;
-    margin-left: 60px;
-    
+  font-size: 18px;
+  color: #cbd5e1;
+  max-width: 500px;
+  line-height: 1.6;
+  margin-left: 70px;
+  margin-bottom: 20px;
 }
+
 
 .btn-primary {
   display: inline-block;
@@ -183,8 +203,8 @@ header nav ul li a:hover::after {
   font-weight: 600;
   font-size: 16px;
   letter-spacing: 0.5px;
-    margin-left: 60px;
-    margin-top: 20px;
+  margin-left: 70px;
+  margin-top: 20px;
   border: none;
   cursor: pointer;
 
@@ -202,7 +222,7 @@ header nav ul li a:hover::after {
 @media screen and (max-width: 759px) {
     
      #hero {
-    min-height: 75vh; /* not full screen */
+    min-height: 59vh; /* not full screen */
     height: auto;
 
     padding: 80px 20px 40px; /* breathing space */
@@ -214,6 +234,14 @@ header nav ul li a:hover::after {
 
     #hero h2 {
         font-size: 32px;
+        text-align: center;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -1px;
+  max-width: 600px;
+  color: #00b792;
+  margin-left: -0px;
     }
 
     #hero p {
