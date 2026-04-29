@@ -147,7 +147,7 @@ header nav ul li a:hover::after {
   align-items: center;
   padding: 0 80px;
   overflow: hidden;
-  background: url(images/hero.png) center / cover no-repeat;
+  background: url(images/herobg.png) center / cover no-repeat;
 }
 
 /* PREMIUM OVERLAY (gradient, not flat black) */
